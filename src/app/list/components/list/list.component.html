@@ -1,0 +1,25 @@
+<ul class="mt-2 list-group">
+  <h4>Lista de monos chinos</h4>
+  <div
+    *ngIf="nombreProta; else noChanges"
+    class="alert alert-danger"
+    role="alert"
+  >
+    Se ha eliminado el registro de {{ nombreProta }}
+  </div>
+
+  <ng-template #noChanges>
+    <div class="alert alert-warning" role="alert">Sin cambios realizados!</div>
+  </ng-template>
+
+  <li *ngFor="let nombre of listaNombres" class="list-group-item">
+    {{ nombre }}
+  </li>
+  <button
+    *ngIf="listaNombres.length > 0"
+    class="mt-4 btn btn-outline-danger"
+    (click)="eliminar()"
+  >
+    Eliminar
+  </button>
+</ul>

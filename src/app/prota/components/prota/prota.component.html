@@ -1,0 +1,27 @@
+<h3>Protagonistas de shonen promedio</h3>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ nombre }}</dd>
+
+  <td>Manga/Anime:</td>
+  <dd>{{ obra }}</dd>
+
+  <td>Año de publicación:</td>
+  <dd>{{ infoEdad }}</dd>
+
+  <td>Objetivo:</td>
+  <dd>{{ objetivo }}</dd>
+</dl>
+
+<button
+  *ngIf="!actualizado"
+  class="btn btn-primary mx-2"
+  (click)="cambiarInfo()"
+>
+  Cambiar obra
+</button>
+
+<button *ngIf="actualizado" class="btn btn-warning mx-2" (click)="reiniciar()">
+  Reset
+</button>
