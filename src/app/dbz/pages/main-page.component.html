@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col">
+    <app-dbz-form (nuevoGuerrero)="agregarGuerrero($event)"></app-dbz-form>
+  </div>
+
+  <div class="col my-2">
+    <app-dbz-list
+      [guerrerosZ]="guerreros"
+      (eliminarGuerrero)="removerGuerrero($event)"
+    ></app-dbz-list>
+  </div>
+</div>

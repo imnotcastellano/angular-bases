@@ -1,0 +1,41 @@
+<h3>Listado de personajes</h3>
+<div class="row my-2">
+  <ul class="list-group">
+    <li
+      *ngFor="let guerrero of guerrerosZ; let i = index; let isLast = last"
+      class="list-group-item"
+      [ngClass]="{ 'list-group-item-success': isLast }"
+    >
+      <div class="col">
+        <span>
+          <h5>
+            <strong> {{ i + 1 }}. {{ guerrero.nombre }} </strong>
+          </h5>
+        </span>
+      </div>
+      <div class="row">
+        <span>
+          <strong>Tecnica: </strong>
+          {{ guerrero.tecnica }}
+        </span>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span><strong>Nivel: </strong> {{ guerrero.nivel }}</span>
+        </div>
+        <div class="col">
+          <div class="d-grid d-md-flex justify-content-md-end">
+            <button
+              class="btn btn-danger btn-sm"
+              (click)="removerGuerrero(guerrero.id!)"
+              type="button"
+            >
+              X
+            </button>
+          </div>
+        </div>
+        <!--         <pre>{{ warrior | json }}</pre> -->
+      </div>
+    </li>
+  </ul>
+</div>
